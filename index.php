@@ -10,7 +10,7 @@
 
 <body>
     <nav class="navbar"></nav>
-    <div class="contentHome">
+    <div class="content">
         <div class="genre">
             <h2>Genre 1</h2>
             <div class="gameCard"></div>
