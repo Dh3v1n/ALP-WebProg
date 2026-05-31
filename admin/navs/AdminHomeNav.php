@@ -1,7 +1,7 @@
-<h1 class="f">EPIC GAME ENCYCLOPEDIA</h1>
+<h1 class="f">EPIC GAME ENCYCLOPEDIA - ADMIN</h1>
 <div></div>
 <div>
-    <a href="login.php">Log In</a>
+    <a href="login.php">Log Out</a>
 </div>
 
 <style>
@@ -26,7 +26,7 @@
         border-radius: 16px;
         border-width: 2px;
         border-color: darkgray;
-        background-color: black;
+        background-color: darkred;
         color: white;
         text-decoration: none;
         padding: 6px;
