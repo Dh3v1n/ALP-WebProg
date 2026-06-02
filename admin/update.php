@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require '../config/db.php';
 
 $id = $_GET['id'];
 $sql = "SELECT * FROM items WHERE id = ?";
