@@ -2,8 +2,8 @@
     <img class="cover" src="img/AVeryCrappyEditIMadeCauseWhyNot.png">
     <h3>Title</h3>
     <div class="AdminButtons">
-        <button class="edit">Edit</button>
-        <button class="delete">Delete</button>
+        <a href="editGame.php" class="edit">Edit</a>
+        <a href="deleteGame.php" class="delete">Delete</a>
     </div>
 </div>
 

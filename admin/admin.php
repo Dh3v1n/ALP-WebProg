@@ -11,6 +11,7 @@
 <body>
     <nav class="navbar"></nav>
     <div class="content">
+        <a class="addGame" href="addGame.php">Add Game</a>
         <div class="gameSelect">
             <div class="genre">
                 <h2>Arcade Shooter</h2>

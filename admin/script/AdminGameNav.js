@@ -1,13 +1,14 @@
 const nav = document.querySelector('.navbar');
-fetch('./navs/AdminHomeNav.php')
+fetch('../navs/GameWikiNav.php')
 .then(res=>res.text())
 .then(data=>{
     nav.innerHTML=data
 });
 
-const card = document.querySelector('.gameCard');
-fetch('./cards/AdminGameCard.php')
+const foot = document.querySelector('.footer');
+fetch('../navs/footer.php')
 .then(res=>res.text())
 .then(data=>{
-    card.innerHTML=data
+    foot.innerHTML=data
 });
+

@@ -1,7 +1,7 @@
 <h1 class="f">EPIC GAME ENCYCLOPEDIA - ADMIN</h1>
 <div></div>
 <div>
-    <a href="login.php">Log Out</a>
+    <a href="../index.php">Log Out</a>
 </div>
 
 <style>

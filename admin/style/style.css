@@ -73,6 +73,20 @@ body {
   text-align: center;
 }
 
+.addGame {
+  border-style: outset;
+  border-radius: 16px;
+  border-width: 2px;
+  border-color: orange;
+  background-color: darkgoldenrod;
+  color: white;
+  text-decoration: none;
+  padding: 6px;
+  font-size: 2rem;
+  place-self: center;
+  margin-bottom: 48px;
+}
+
 .gameSelect {
   text-align: left;
 }
@@ -165,7 +179,7 @@ h2 {
   margin: 32px;
 }
 
-.login {
+.addGame {
   background-color: orange;
   color: white;
   border-radius: 16px;
@@ -176,18 +190,18 @@ h2 {
   margin-bottom: 24px;
 }
 
-.login div {
+.addGame div {
   background-color: rgb(30, 15, 0);
   border-radius: 16px;
   padding: 16px;
 }
 
-.login h1 {
+.addGame h1 {
   font-size: 3rem;
   margin-bottom: 32px;
 }
 
-.login input {
+.addGame input {
   margin-bottom: 16px;
 }
 
@@ -203,7 +217,7 @@ h2 {
   font-size: 16px;
 }
 
-.loginBtn {
+.addBtn {
   border-style: outset;
   border-radius: 16px;
   border-width: 2px;
@@ -213,6 +227,7 @@ h2 {
   text-decoration: none;
   padding: 6px;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .back {
@@ -226,4 +241,5 @@ h2 {
   padding: 6px;
   font-size: 2rem;
   place-self: center;
+  cursor: pointer;
 }

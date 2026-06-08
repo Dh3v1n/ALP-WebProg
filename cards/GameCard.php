@@ -1,10 +1,13 @@
-<button>
+<?php
+require 'config/db.php';
+?>
+<a href="gameHome.php" class="card">
     <img class="cover" src="img/AVeryCrappyEditIMadeCauseWhyNot.png">
     <h3>Title</h3>
-</button>
+</a>
 
 <style>
-    button {
+    .card {
         background-color: orange;
         border-radius: 8px;
         text-align: center;
