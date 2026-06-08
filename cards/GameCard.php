@@ -1,5 +1,5 @@
 <?php
-require 'config/db.php';
+require '../config/db.php';
 ?>
 <a href="gameHome.php" class="card">
     <img class="cover" src="img/AVeryCrappyEditIMadeCauseWhyNot.png">
