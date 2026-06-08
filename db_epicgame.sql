@@ -41,8 +41,6 @@ CREATE TABLE `game` (
 -- Dumping data for table `game`
 --
 
-INSERT INTO `game` (`id`, `title`, `genre`, `description`, `publisher`, `developer`, `logo`) VALUES
-(1, 'helllo ', 'call of duty', 'hello bro', 'hello', 'hello', 'Call_of_Duty_Mobile_Logo.png');
 
 -- --------------------------------------------------------
 
