@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'game_db';
+$dbname = 'db_epicgame';
 $username = 'root'; 
 $password = '';     
 
