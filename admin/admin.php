@@ -14,7 +14,7 @@ require '../config/db.php';
 <body>
     <nav class="navbar"></nav>
     <div class="content">
-        <a class="addGame" href="addGame.php">Add Game</a>
+        <a class="addGame" href="add/addGame.php">Add Game</a>
         <div class="gameSelect">
             <div class="gameCard"></div>
         </div>
