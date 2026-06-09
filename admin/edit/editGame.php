@@ -22,7 +22,7 @@ if (isset($_POST['update'])) {
         $_POST['logo'], 
         $_GET['id']
     ]);
-    header("Location: index.php");
+    header("Location: ../admin.php");
     exit();
 }
 ?>
