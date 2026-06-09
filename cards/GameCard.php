@@ -1,4 +1,5 @@
 <?php
+require '../config/db.php';
 $stmt = $pdo->query("SELECT * FROM game ORDER BY id DESC");
 while ($game = $stmt->fetch(PDO::FETCH_ASSOC)) {
     ?>
