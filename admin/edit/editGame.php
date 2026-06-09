@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require '../../config/db.php';
 
 // 1. Ambil data game berdasarkan ID yang dikirim dari link
 $game = null;
@@ -34,7 +34,7 @@ if (isset($_POST['update'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Edit Game</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 
 <body>
@@ -42,7 +42,7 @@ if (isset($_POST['update'])) {
     <div class="content">
         <div class="addGame">
             <div>
-                <form method="POST" action="controller/controller.php">
+                <form method="POST">
                     <label for="title">Game Title</label><br>
                     <input class="txtInput" type="text" id="title" name="title" value="<?= htmlspecialchars($game['title']) ?>" required><br>
                     <label for="cover">Game Cover</label><br>
@@ -79,7 +79,7 @@ if (isset($_POST['update'])) {
                 </div>
             </div>
         </div>
-        <a class="back" href="admin.php">Back</a>
+        <a class="back" href="../admin.php">Back</a>
         <script src="script/GameNav.js"></script>
 </body>
 

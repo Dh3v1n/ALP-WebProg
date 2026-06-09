@@ -1,5 +1,5 @@
 <?php
-require '../config/db.php';
+require '../../config/db.php';
 
 $id = $_GET['id'];
 $sql = "SELECT * FROM games WHERE id = ?";
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Edit Game</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 
 <body>
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
         </div>
-        <a class="back" href="admin.php">Back</a>
+        <a class="back" href="../admin.php">Back</a>
         <script src="script/GameNav.js"></script>
 </body>
 

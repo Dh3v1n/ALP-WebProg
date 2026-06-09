@@ -1,5 +1,5 @@
 <?php
-require '../config/db.php';
+require '../../config/db.php';
 
 $id = $_GET['id'];
 $sql = "SELECT * FROM items WHERE id = ?";
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 <head>
     <title>Edit Item</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
     <div class="content">

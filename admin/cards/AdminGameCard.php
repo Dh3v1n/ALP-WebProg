@@ -1,4 +1,5 @@
 <?php
+require '../../config/db.php';
 $stmt = $pdo->query("SELECT * FROM game ORDER BY id DESC");
 while ($game = $stmt->fetch(PDO::FETCH_ASSOC)) {
     ?>
@@ -6,8 +7,8 @@ while ($game = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <img class="cover" src="<?= htmlspecialchars($game['logo']) ?>" alt="Cover">
         <h3><?= htmlspecialchars($game['title']) ?></h3>
         <div class="AdminButtons">
-            <a href="editGame.php?id=<?= $game['id'] ?>" class="edit">Edit</a>
-            <a href="deleteGame.php?id=<?= $game['id'] ?>" class="delete">Delete</a>
+            <a href="edit/editGame.php?id=<?= $game['id'] ?>" class="edit">Edit</a>
+            <a href="delete/deleteGame.php?id=<?= $game['id'] ?>" class="delete">Delete</a>
         </div>
     </div>
 <?php } ?>

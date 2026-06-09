@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require '../../config/db.php';
 if (isset($_GET['id'])) {
     $stmt = $pdo->prepare("DELETE FROM game WHERE id = ?");
     $stmt->execute([$_GET['id']]);

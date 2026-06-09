@@ -1,5 +1,5 @@
 <?php
-require '../config/db.php';
+require '../../config/db.php';
 
 if (isset($_POST['save'])) {
     $title = $_POST['title'];
@@ -23,7 +23,7 @@ if (isset($_POST['save'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Add Game</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 
 <body>
@@ -31,7 +31,7 @@ if (isset($_POST['save'])) {
         <div class="addGame">
             <div>
                 <h1>Add Game</h1>
-                <form method="POST" action="controller/controller.php">
+                <form method="POST">
                     <label for="title">Game Title</label><br>
                     <input class="txtInput" type="text" id="title" name="title" value="" required><br>
                     <label for="logo">Game Cover</label><br>
@@ -54,7 +54,7 @@ if (isset($_POST['save'])) {
                 </form>
             </div>
         </div>
-        <a class="back" href="admin.php">Back</a>
+        <a class="back" href="../admin.php">Back</a>
     </div>
 </body>
 
