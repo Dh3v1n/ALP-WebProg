@@ -8,6 +8,6 @@ if (isset($_GET['id'])) {
     $stmt->execute([$id]);
 }
 
-header("Location: admin.php");
+header("Location: ../admin.php");
 exit();
 ?>

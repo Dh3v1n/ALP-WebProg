@@ -4,6 +4,6 @@ if (isset($_GET['id'])) {
     $stmt = $pdo->prepare("DELETE FROM game WHERE id = ?");
     $stmt->execute([$_GET['id']]);
 }
-header("Location: index.php");
+header("Location: ../admin.php");
 exit();
 ?>
