@@ -1,22 +1,28 @@
 <?php
-require '../config/db.php';
+require 'db.php';
 
-$id = $_GET['id'];
-$sql = "SELECT * FROM games WHERE id = ?";
-$stmt = $pdo->prepare($sql);
-$stmt->execute([$id]);
-$item = $stmt->fetch();
+// 1. Ambil data game berdasarkan ID yang dikirim dari link
+$game = null;
+if (isset($_GET['id'])) {
+    $stmt = $pdo->prepare("SELECT * FROM game WHERE id = ?");
+    $stmt->execute([$_GET['id']]);
+    $game = $stmt->fetch(PDO::FETCH_ASSOC);
+}
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['item_name'];
-    $desc = $_POST['description'];
-    $img = $_POST['image_url'];
-
-    $updateSql = "UPDATE items SET item_name = ?, description = ?, image_url = ? WHERE id = ?";
-    $updateStmt = $pdo->prepare($updateSql);
-    $updateStmt->execute([$name, $desc, $img, $id]);
-
-    header("Location: admin.php");
+// 2. Jika tombol "Update Data" ditekan
+if (isset($_POST['update'])) {
+    $sql = "UPDATE game SET title=?, genre=?, description=?, publisher=?, developer=?, logo=? WHERE id=?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([
+        $_POST['title'], 
+        $_POST['genre'], 
+        $_POST['desc'], 
+        $_POST['publisher'], 
+        $_POST['dev'], 
+        $_POST['logo'], 
+        $_GET['id']
+    ]);
+    header("Location: index.php");
     exit();
 }
 ?>
@@ -38,29 +44,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div>
                 <form method="POST" action="controller/controller.php">
                     <label for="title">Game Title</label><br>
-                    <input class="txtInput" type="text" id="title" name="title" value=""><br>
+                    <input class="txtInput" type="text" id="title" name="title" value="<?= htmlspecialchars($game['title']) ?>" required><br>
                     <label for="cover">Game Cover</label><br>
                     <input type="file" id="cover" name="cover" accept="image?*"><br>
                     <label for="desc">Game Description</label><br>
-                    <input class="txtInput" type="text" id="desc" name="desc" value=""><br>
+                    <textarea class="txtInput" id="desc" name="desc" value="" rows="5" required><?= htmlspecialchars($game['description']) ?></textarea><br>
                     <label for="publisher">Publisher</label><br>
-                    <input class="txtInput" type="text" id="publisher" name="publisher" value=""><br>
+                    <input class="txtInput" type="text" id="publisher" name="publisher" value="<?= htmlspecialchars($game['publisher']) ?>" required><br>
                     <label for="dev">Developer</label><br>
-                    <input class="txtInput" type="text" id="dev" name="dev" value=""><br>
+                    <input class="txtInput" type="text" id="dev" name="dev" value="<?= htmlspecialchars($game['developer']) ?>" required><br>
                     <label for="genre">Game Genre</label><br>
                     <select id="genre" name="genre">
-                        <option value="Arcade-Shooter">Arcade Shooter</option>
-                        <option value="Tactical-Shooter">Tactical Shooter</option>
-                        <option value="Survival">Survival</option>
-                        <option value="Survival-Sandbox">Survival Sandbox</option>
-                        <option value="Horror">Horror</option>
+                        <option value="Arcade Shooter" <?= $game['genre']=='Arcade Shooter'?'selected':'' ?>>Arcade Shooter</option>
+                        <option value="Tactical Shooter" <?= $game['genre']=='Tactical Shooter'?'selected':'' ?>>Tactical Shooter</option>
+                        <option value="Survival" <?= $game['genre']=='Survival'?'selected':'' ?>>Survival</option>
+                        <option value="Horror" <?= $game['genre']=='Horror'?'selected':'' ?>>Horror</option>
                     </select>
                     <br>
                     <button name="save" class="addBtn" type="submit">Save Game</button>
                 </form>
             </div>
         </div>
-        <h1 class="gameTitle"></h1>
+        <h1 class="gameTitle"><?= htmlspecialchars($game['title']) ?></h1>
         <div class="gameItemCategories">
             <div>
                 <h2>Categories</h2>

@@ -1,10 +1,12 @@
 <?php
-require '../config/db.php';
-?>
-<a href="gameHome.php" class="card">
-    <img class="cover" src="img/AVeryCrappyEditIMadeCauseWhyNot.png">
-    <h3>Title</h3>
-</a>
+$stmt = $pdo->query("SELECT * FROM game ORDER BY id DESC");
+while ($game = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    ?>
+    <a href="gameHome.php?id=<?= $game['id'] ?>" class="card">
+        <img class="cover" src="<?= htmlspecialchars($game['logo']) ?>" alt="Cover">
+        <h3><?= htmlspecialchars($game['title']) ?></h3>
+    </a>
+<?php } ?>
 
 <style>
     .card {

@@ -1,11 +1,16 @@
-<div class="card">
-    <img class="cover" src="img/AVeryCrappyEditIMadeCauseWhyNot.png">
-    <h3>Title</h3>
-    <div class="AdminButtons">
-        <a href="editGame.php" class="edit">Edit</a>
-        <a href="deleteGame.php" class="delete">Delete</a>
+<?php
+$stmt = $pdo->query("SELECT * FROM game ORDER BY id DESC");
+while ($game = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    ?>
+    <div class="card">
+        <img class="cover" src="<?= htmlspecialchars($game['logo']) ?>" alt="Cover">
+        <h3><?= htmlspecialchars($game['title']) ?></h3>
+        <div class="AdminButtons">
+            <a href="editGame.php?id=<?= $game['id'] ?>" class="edit">Edit</a>
+            <a href="deleteGame.php?id=<?= $game['id'] ?>" class="delete">Delete</a>
+        </div>
     </div>
-</div>
+<?php } ?>
 
 <style>
     .card {

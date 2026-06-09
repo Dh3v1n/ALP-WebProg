@@ -15,26 +15,7 @@ require 'config/db.php';
     <nav class="navbar"></nav>
     <div class="content">
         <div class="gameSelect">
-            <div class="genre">
-                <h2>Arcade Shooter</h2>
-                <div class="gameCard"></div>
-            </div>
-            <div class="genre">
-                <h2>Tactical Shooter</h2>
-                <div class="gameCard"></div>
-            </div>
-            <div class="genre">
-                <h2>Survival</h2>
-                <div class="gameCard"></div>
-            </div>
-            <div class="genre">
-                <h2>Survival Sandbox</h2>
-                <div class="gameCard"></div>
-            </div>
-            <div class="genre">
-                <h2>Horror</h2>
-                <div class="gameCard"></div>
-            </div>
+            <div class="gameCard"></div>
         </div>
     </div>
     <script src="script/HomeNav.js"></script>

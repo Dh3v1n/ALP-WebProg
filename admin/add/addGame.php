@@ -1,16 +1,18 @@
 <?php
 require '../config/db.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['game_name'];
+if (isset($_POST['save'])) {
+    $title = $_POST['title'];
+    $genre = $_POST['genre'];
     $desc = $_POST['description'];
-    $img = $_POST['image_url'];
+    $publisher = $_POST['publisher'];
+    $dev = $_POST['developer'];
+    $logo = $_POST['logo'];
 
-    $sql = "INSERT INTO items (item_name, description, image_url) VALUES (?, ?, ?)";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$name, $desc, $img]);
-
-    header("Location: admin.php"); 
+    $stmt = $pdo->prepare("INSERT INTO game (title, genre, description, publisher, developer, logo) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->execute([$title, $genre, $desc, $publisher, $dev, $logo]);
+    
+    header("Location: index.php");
     exit();
 }
 ?>
@@ -32,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form method="POST" action="controller/controller.php">
                     <label for="title">Game Title</label><br>
                     <input class="txtInput" type="text" id="title" name="title" value="" required><br>
-                    <label for="cover">Game Cover</label><br>
-                    <input type="file" id="cover" name="cover" accept="image?*"><br>
+                    <label for="logo">Game Cover</label><br>
+                    <input type="file" id="logo" name="logo" accept="image?*"><br>
                     <label for="desc">Game Description</label><br>
                     <textarea class="txtInput" id="desc" name="desc" value="" rows="5" required></textarea><br>
                     <label for="publisher">Publisher</label><br>
@@ -42,10 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input class="txtInput" type="text" id="dev" name="dev" value="" required><br>
                     <label for="genre">Game Genre</label><br>
                     <select id="genre" name="genre" required>
-                        <option value="Arcade-Shooter">Arcade Shooter</option>
-                        <option value="Tactical-Shooter">Tactical Shooter</option>
+                        <option value="Arcade Shooter">Arcade Shooter</option>
+                        <option value="Tactical Shooter">Tactical Shooter</option>
                         <option value="Survival">Survival</option>
-                        <option value="Survival-Sandbox">Survival Sandbox</option>
                         <option value="Horror">Horror</option>
                     </select>
                     <br>

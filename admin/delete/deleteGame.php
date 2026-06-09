@@ -1,13 +1,9 @@
 <?php
-require '../config/db.php';
-
+require 'db.php';
 if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $sql = "DELETE FROM games WHERE id = ?";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$id]);
+    $stmt = $pdo->prepare("DELETE FROM game WHERE id = ?");
+    $stmt->execute([$_GET['id']]);
 }
-
-header("Location: admin.php");
+header("Location: index.php");
 exit();
 ?>
